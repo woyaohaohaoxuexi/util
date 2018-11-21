@@ -26,6 +26,18 @@ function compare (rule, prototype) {
     }
 }
 
+/**
+ * 区间随机数
+ *
+ * @param {Number} n -- 区间的底数
+ * @param {Number} m -- 区间的顶数
+ * @returns {Number} 随机数字
+ */
+const randomNumber = (n, m) => { return n + Math.floor(Math.random() * (m - n)) };
+module.exports = {
+    randomNumber
+}
+
 
 
 
