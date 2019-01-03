@@ -38,6 +38,34 @@ module.exports = {
     randomNumber
 }
 
+/**
+ * 获取一个月有多少天
+ * @param {Date} date -- 日期对象
+ * @returns {Number} 要查询的日期所在月份有多少天   
+ */
+function getSomeDay(date) {
+    if(date instanceof Date) {
+        let dayLength = '';
+        date.setMonth(date.getMonth() + 1);
+        date.setDate(0);
+        return date.getDate();
+    } 
+    return '';
+}
+
+/**
+ * 计算某个月的第一天是星期几
+ * @param {Date} date -- 日期对象
+ * @returns {Number} 要查询的日期所在月份的第一天是星期几
+ */
+getMonthFirstDayWork(date) {
+    if(date instanceof Date) {
+        date.setDate(1);
+        return date.getDay() === 0 ? 7 : date.getDay();
+    }
+    return '';
+}
+
 
 
 
