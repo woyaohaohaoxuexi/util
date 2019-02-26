@@ -67,5 +67,24 @@ getMonthFirstDayWork(date) {
 }
 
 
+/**
+ * 数组去重
+ * @param {Array} arr -- 原数组
+ * @returns {Array} 去除重复数据后的数组
+ */
+function unique5(array){
+    var r = [];
+    for(var i = 0, l = array.length; i < l; i++) {
+        for(var j = i + 1; j < l; j++) {
+            if (array[i] === array[j]) {
+                j = ++i;
+                break;
+            } 
+            r.push(array[i]);  
+        }
+    }
+    return r;
+}
+
 
 
