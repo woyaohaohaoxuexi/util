@@ -86,5 +86,40 @@ function unique5(array){
     return r;
 }
 
+/**
+ * 获取地址栏单个参数
+ * @param {String} key -- 要获取的key
+ * @returns {String} 获取到的值
+ */
+function getParam(key){
+    var url = window.location.href; 
+    var pattern = new RegExp('[?&]*'+ key +'=([^&]+)');
+    try {
+        var value = url.match(pattern)[1];
+        return value;
+    } catch (err) {
+        return undefined;
+    }
+}
 
+/**
+ * 获取地址栏参数
+ * @param {String} url -- 页面完整地址
+ * @returns {Object} 地址携带的数据
+ */
+function getParams(url) {
+    try {
+        var index = url.indexOf('?');
+        url = url.match(/\?([^#]+)/)[1];
+        var obj = {}, arr = url.split('&');
+        for (var i = 0; i < arr.length; i++) {
+            var subArr = arr[i].split('=');
+            obj[subArr[0]] = subArr[1];
+        }
+        return obj;
+
+    } catch (err) {
+        return null;
+    }
+}
 
